@@ -1,7 +1,7 @@
 module.exports = function() {
   $.gulp.task('sass:build', () => {
     return $.gulp.src('dev/static/sass/**/*.+(sass|scss)')
-      .pipe($.gp.sass({'include css': true}))
+      .pipe($.gp.sass())
       .on('error', $.gp.notify.onError(function (error) {
         return {
           title: 'SASS',
@@ -21,7 +21,7 @@ module.exports = function() {
   $.gulp.task('sass:dev', () => {
     return $.gulp.src('dev/static/sass/**/*.+(sass|scss)')
       .pipe($.gp.sourcemaps.init())
-      .pipe($.gp.sass({'include css': true}))
+      .pipe($.gp.sass())
       .on('error', $.gp.notify.onError(function (error) {
         return {
           title: 'SASS',
